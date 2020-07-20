@@ -2,7 +2,47 @@ import random
 
 money = 100
 
-#comment
+
+#----------------------------------------------------------
+#---------COINFLIP-----------------------------------------
+#----------------------------------------------------------
+
+def coinflip(bet, guess):
+
+    if guess == "heads": #change string to integer
+        guess_nr = 1
+    elif guess == "tails":
+        guess_nr = 2
+    else:
+        print("Wrong input")
+        return 0
+
+    if bet > money: #check, if enough money is left
+        print("You only have " +str(money) +" left")
+        return 0
+    
+    print("---------------------------") #information for user
+    print("You guessed: " +str(guess))
+    print("Coin is flipping, aaaaaand it's:")
+    print("...")
+    result = random.randint(1,2) #flip coin
+    if result ==1:
+        print("heads")
+    else:
+        print("tails")
+
+    if result == guess_nr: #print win or loss
+        print("You won " +str(bet) +" dollars")
+        return bet
+    else:
+        print("You lost " +str(bet) +" dollars")
+        return -bet
+
+
+
+#----------------------------------------------------------
+#---------CHO-HAN------------------------------------------
+#----------------------------------------------------------
 
 def cho_han(bet, guess):
    
@@ -30,4 +70,27 @@ def cho_han(bet, guess):
         else:
             return "... you lost " +str(bet) +" Dollar"
 
-print(cho_han(25, "even"))
+
+#----------------------------------------------------------
+#---------CARD GAME----------------------------------------
+#----------------------------------------------------------
+
+
+
+
+
+
+#----------------------------------------------------------
+#---------ROULETTE-----------------------------------------
+#----------------------------------------------------------
+
+
+
+
+#----------------------------------------------------------
+#---------PRINT FUNCTIONS----------------------------------
+#----------------------------------------------------------
+
+
+coinflip(10,"heads")
+#print(cho_han(25, "even"))
