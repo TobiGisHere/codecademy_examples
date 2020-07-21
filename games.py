@@ -75,7 +75,19 @@ def cho_han(bet, guess):
 #---------CARD GAME----------------------------------------
 #----------------------------------------------------------
 
-
+def card_game(bet):
+    if bet > money:
+        return "You only have " +str(money) +" Dollars"
+    else:
+        player1 = random.randint(1,10)
+        player2 = random.randint(1,10)
+        print("your card is " +str(player1) +" and your oppenents card is " +str(player2))
+        if player1 > player2:
+            return "You won " +str(bet)
+        elif player1 < player2:
+            return "You lost " +str(bet)
+        else:
+            return 0
 
 
 
@@ -92,5 +104,6 @@ def cho_han(bet, guess):
 #----------------------------------------------------------
 
 
-coinflip(10,"heads")
+#coinflip(10,"heads")
 #print(cho_han(25, "even"))
+cardgame(10)
