@@ -77,18 +77,24 @@ def cho_han(bet, guess):
 
 def card_game(bet):
     if bet > money:
-        return "You only have " +str(money) +" Dollars"
+        print("You only have " +str(money) +" Dollars")
     else:
         player1 = random.randint(1,10)
         player2 = random.randint(1,10)
-        print("your card is " +str(player1) +" and your oppenents card is " +str(player2))
+        if player1 == player2:
+            player2 = random.randint(1,10)
+        print("Your card is " +str(player1) +" and your oppenents card is " +str(player2))
+        
         if player1 > player2:
-            return "You won " +str(bet)
+            print("You won " +str(bet) +" Dollars")
+            return bet
         elif player1 < player2:
-            return "You lost " +str(bet)
+            print("You lost " +str(bet) +" Dollars")
+            return -bet
         else:
+            print("It's a tie, try again")
             return 0
-
+    
 
 
 
@@ -106,4 +112,4 @@ def card_game(bet):
 
 #coinflip(10,"heads")
 #print(cho_han(25, "even"))
-cardgame(10)
+card_game(10)
